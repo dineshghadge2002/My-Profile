@@ -25,10 +25,11 @@ const services = [
 
 export const Services = () => {
   return (
-    <section id="services" className="w-full py-12 sm:py-16 bg-blue-50 px-4 sm:px-6">
+    <section id="services" className="w-full py-12 sm:py-16 px-4 sm:px-6" style={{ background: 'var(--gh-bg)' }}>
   <div className="max-w-screen-3xl mx-auto text-center px-2 2xl:px-96">
         <motion.h2
-          className="text-4xl font-bold text-gray-800 mb-10"
+          className="text-4xl font-bold mb-10"
+          style={{ color: 'var(--gh-link)' }}
           initial={{ opacity: 0, y: -30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
@@ -40,7 +41,8 @@ export const Services = () => {
           {services.map((service, index) => (
             <motion.div
               key={index}
-              className="bg-white p-4 sm:p-6 rounded-xl shadow-md hover:shadow-lg transition relative hover:scale-[1.03] duration-200"
+              className="p-4 sm:p-6 rounded-xl shadow-md hover:shadow-lg transition relative hover:scale-[1.03] duration-200"
+              style={{ background: 'var(--gh-card)', border: '1px solid var(--gh-border)' }}
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: index * 0.2 }}
@@ -53,10 +55,10 @@ export const Services = () => {
               {/* Icon */}
               <div className="mb-4 flex justify-center">{service.icon}</div>
 
-              <h3 className="text-xl font-semibold text-blue-700 mb-2">
+              <h3 className="text-xl font-semibold mb-2" style={{ color: 'var(--gh-link)' }}>
                 {service.title}
               </h3>
-              <p className="text-gray-700 text-sm">{service.description}</p>
+              <p className="text-sm" style={{ color: 'var(--gh-text)' }}>{service.description}</p>
             </motion.div>
           ))}
         </div>

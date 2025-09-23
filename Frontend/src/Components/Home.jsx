@@ -27,13 +27,15 @@ export const Home = () => {
   return (
     <section
       id="home"
-      className="min-h-screen w-full flex items-center justify-center bg-gradient-to-br from-blue-100 to-blue-300 px-4 sm:px-8 md:px-16 lg:px-32 xl:px-48 2xl:px-80"
+      style={{ background: 'var(--gh-bg)' }}
+      className="min-h-screen w-full flex items-center justify-center px-4 sm:px-8 md:px-16 lg:px-32 xl:px-48 2xl:px-80"
     >
       <div className="flex flex-col md:flex-row items-center justify-between w-full max-w-screen-2xl mx-auto gap-10 md:gap-20">
         {/* Left: Text Content */}
         <div className="flex-1 text-center md:text-left">
           <motion.h1
-            className="text-4xl sm:text-5xl md:text-6xl font-extrabold text-blue-800 mb-4 drop-shadow-lg"
+            className="text-4xl sm:text-5xl md:text-6xl font-extrabold mb-4 drop-shadow-lg"
+            style={{ color: 'var(--gh-link)' }}
             initial={{ opacity: 0, y: -50 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
@@ -41,16 +43,18 @@ export const Home = () => {
             Hi, I'm Dinesh Ghadge
           </motion.h1>
           <motion.h2
-            className="text-xl sm:text-2xl md:text-3xl text-blue-700 mb-6 font-semibold min-h-[2.5rem]"
+            className="text-xl sm:text-2xl md:text-3xl mb-6 font-semibold min-h-[2.5rem]"
+            style={{ color: 'var(--gh-text)' }}
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
           >
             {typedSubtitle}
-            <span className="animate-pulse">{typedSubtitle.length < subtitleText.length ? "|" : ""}</span>
+            <span className="animate-pulse" style={{ color: 'var(--gh-link-hover)' }}>{typedSubtitle.length < subtitleText.length ? "|" : ""}</span>
           </motion.h2>
           <motion.p
-            className="text-lg sm:text-xl text-gray-700 max-w-xl mb-8"
+            className="text-lg sm:text-xl max-w-xl mb-8"
+            style={{ color: 'var(--gh-text)' }}
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
@@ -64,7 +68,13 @@ export const Home = () => {
           >
             <a
               href="#projects"
-              className="inline-block bg-blue-700 text-white text-lg font-medium px-8 py-3 rounded-xl hover:bg-blue-800 transition shadow-lg hover:scale-105 active:scale-95 duration-200"
+              className="inline-block text-lg font-medium px-8 py-3 rounded-xl transition shadow-lg hover:scale-105 active:scale-95 duration-200"
+              style={{
+                background: 'var(--gh-link)',
+                color: '#fff',
+                border: '1px solid var(--gh-border)',
+                boxShadow: '0 2px 8px 0 var(--gh-border)',
+              }}
             >
               Explore Projects
             </a>
@@ -81,13 +91,17 @@ export const Home = () => {
             <img
               src={profilePic}
               alt="Dinesh Ghadge"
-              className={`w-64 h-64 object-cover rounded-full border-4 border-blue-400 shadow-xl transition duration-300 ${unlocked ? '' : 'blur-sm'}`}
-              style={{ filter: unlocked ? 'none' : 'blur(8px)' }}
+              className={`w-64 h-64 object-cover rounded-full border-4 shadow-xl transition duration-300 ${unlocked ? '' : 'blur-sm'}`}
+              style={{
+                filter: unlocked ? 'none' : 'blur(8px)',
+                borderColor: 'var(--gh-link)',
+              }}
             />
             {/* Overlay with lock and key if not unlocked */}
             {!unlocked && (
               <motion.div
-                className="absolute inset-0 rounded-full bg-blue-700 bg-opacity-80 flex flex-col items-center justify-center cursor-pointer"
+                className="absolute inset-0 rounded-full flex flex-col items-center justify-center cursor-pointer"
+                style={{ background: 'var(--gh-link)', opacity: 0.8 }}
                 initial={{ opacity: 1 }}
                 animate={{ opacity: unlocked ? 0 : 1 }}
                 transition={{ duration: 0.6 }}
@@ -98,16 +112,16 @@ export const Home = () => {
                 <div className="mb-4">
                   <svg width="48" height="48" viewBox="0 0 24 24" fill="none">
                     <rect x="7" y="11" width="10" height="8" rx="2" fill="#fff" />
-                    <rect x="9" y="7" width="6" height="6" rx="3" fill="#1976d2" />
-                    <rect x="11" y="15" width="2" height="2" rx="1" fill="#1976d2" />
+                    <rect x="9" y="7" width="6" height="6" rx="3" fill="var(--gh-link-hover)" />
+                    <rect x="11" y="15" width="2" height="2" rx="1" fill="var(--gh-link-hover)" />
                   </svg>
                 </div>
                 {/* Key icon */}
                 <div className="mb-2">
                   <svg width="40" height="40" viewBox="0 0 24 24" fill="none">
                     <circle cx="10" cy="12" r="4" fill="#fff" />
-                    <rect x="14" y="11" width="6" height="2" rx="1" fill="#1976d2" />
-                    <rect x="18" y="13" width="2" height="2" rx="1" fill="#1976d2" />
+                    <rect x="14" y="11" width="6" height="2" rx="1" fill="var(--gh-link-hover)" />
+                    <rect x="18" y="13" width="2" height="2" rx="1" fill="var(--gh-link-hover)" />
                   </svg>
                 </div>
                 <span className="text-white text-base">Click to unlock and reveal</span>

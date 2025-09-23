@@ -1,3 +1,25 @@
+/* GitHub Theme Variables */
+:root {
+  --gh-bg: #f6f8fa;
+  --gh-nav: #ffffff;
+  --gh-card: #ffffff;
+  --gh-border: #d0d7de;
+  --gh-text: #24292f;
+  --gh-link: #0969da;
+  --gh-link-hover: #1a7f37;
+  --gh-accent: #2da44e;
+}
+
+.dark {
+  --gh-bg: #0d1117;
+  --gh-nav: #161b22;
+  --gh-card: #161b22;
+  --gh-border: #30363d;
+  --gh-text: #c9d1d9;
+  --gh-link: #58a6ff;
+  --gh-link-hover: #1f6feb;
+  --gh-accent: #238636;
+}
 :root {
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;

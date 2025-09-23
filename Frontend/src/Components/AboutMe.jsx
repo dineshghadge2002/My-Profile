@@ -23,7 +23,8 @@ export const AboutMe = () => {
     <section
       id="about"
       ref={ref}
-      className="h-screen w-full flex items-center justify-center bg-gray-100 px-4"
+      style={{ background: 'var(--gh-bg)' }}
+      className="h-screen w-full flex items-center justify-center px-4"
     >
       <motion.div
         className="max-w-3xl"
@@ -32,7 +33,8 @@ export const AboutMe = () => {
         animate={isInView ? "visible" : "hidden"}
       >
         <motion.h2
-          className="text-4xl font-semibold text-gray-800 mb-4"
+          className="text-4xl font-semibold mb-4"
+          style={{ color: 'var(--gh-link)' }}
           variants={itemVariants}
           transition={{ duration: 0.6, ease: "easeOut" }}
         >
@@ -40,7 +42,8 @@ export const AboutMe = () => {
         </motion.h2>
 
         <motion.p
-          className="text-gray-800 text-lg leading-relaxed"
+          className="text-lg leading-relaxed"
+          style={{ color: 'var(--gh-text)' }}
           variants={itemVariants}
           transition={{ duration: 0.6, ease: "easeOut" }}
         >
@@ -48,7 +51,8 @@ export const AboutMe = () => {
         </motion.p>
 
         <motion.p
-          className="text-gray-800 text-lg leading-relaxed mt-4"
+          className="text-lg leading-relaxed mt-4"
+          style={{ color: 'var(--gh-text)' }}
           variants={itemVariants}
           transition={{ duration: 0.6, ease: "easeOut" }}
         >

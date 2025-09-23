@@ -19,10 +19,11 @@ export const Contact = () => {
   };
 
   return (
-    <section className="w-full py-12 sm:py-20 bg-blue-100 px-4 sm:px-6">
+  <section className="w-full py-12 sm:py-20 px-4 sm:px-6" style={{ background: 'var(--gh-bg)' }}>
       <div className="max-w-screen-2xl mx-auto">
         <motion.h2
-          className="text-4xl font-bold text-gray-800 mb-10 text-center"
+          className="text-4xl font-bold mb-10 text-center"
+          style={{ color: 'var(--gh-link)' }}
           initial={{ opacity: 0, y: -30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
@@ -32,13 +33,14 @@ export const Contact = () => {
         <div className="flex flex-col md:flex-row gap-10 md:gap-20 items-center justify-center">
           {/* Left: Contact Links */}
           <motion.div
-            className="w-full md:w-1/2 bg-white rounded-xl shadow-md p-6 mb-8 md:mb-0"
+            className="w-full md:w-1/2 rounded-xl shadow-md p-6 mb-8 md:mb-0"
+            style={{ background: 'var(--gh-card)', border: '1px solid var(--gh-border)' }}
             initial={{ opacity: 0, x: -40 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.7 }}
           >
-            <h3 className="text-2xl font-semibold text-blue-700 mb-6 text-center">Get in Touch</h3>
-            <ul className="space-y-6 text-base sm:text-lg text-gray-700">
+            <h3 className="text-2xl font-semibold mb-6 text-center" style={{ color: 'var(--gh-link)' }}>Get in Touch</h3>
+            <ul className="space-y-6 text-base sm:text-lg" style={{ color: 'var(--gh-text)' }}>
               <motion.li
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -46,7 +48,7 @@ export const Contact = () => {
                 className="flex items-center gap-3 hover:bg-blue-50 px-3 py-2 rounded-lg cursor-pointer transition"
                 whileHover={{ scale: 1.05, backgroundColor: "#e0e7ff" }}
               >
-                <FaPhoneAlt className="text-blue-600" />
+                <FaPhoneAlt style={{ color: 'var(--gh-link)' }} />
                 <a href="tel:+919370570053" className="hover:underline">
                   +91 9370570053
                 </a>
@@ -58,7 +60,7 @@ export const Contact = () => {
                 className="flex items-center gap-3 hover:bg-blue-50 px-3 py-2 rounded-lg cursor-pointer transition"
                 whileHover={{ scale: 1.05, backgroundColor: "#e0e7ff" }}
               >
-                <FaEnvelope className="text-blue-600" />
+                <FaEnvelope style={{ color: 'var(--gh-link)' }} />
                 <a href="mailto:dghadge2002@gmail.com" className="hover:underline">
                   dghadge2002@gmail.com
                 </a>
@@ -70,7 +72,7 @@ export const Contact = () => {
                 className="flex items-center gap-3 hover:bg-blue-50 px-3 py-2 rounded-lg cursor-pointer transition"
                 whileHover={{ scale: 1.05, backgroundColor: "#e0e7ff" }}
               >
-                <FaLinkedin className="text-blue-600" />
+                <FaLinkedin style={{ color: 'var(--gh-link)' }} />
                 <a
                   href="https://www.linkedin.com/in/dinesh-ghadge-05may02/"
                   target="_blank"
@@ -84,12 +86,13 @@ export const Contact = () => {
           </motion.div>
           {/* Right: Contact Form */}
           <motion.div
-            className="w-full md:w-1/2 bg-white rounded-xl shadow-md p-6"
+            className="w-full md:w-1/2 rounded-xl shadow-md p-6"
+            style={{ background: 'var(--gh-card)', border: '1px solid var(--gh-border)' }}
             initial={{ opacity: 0, x: 40 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.7 }}
           >
-            <h3 className="text-2xl font-semibold text-blue-700 mb-6 text-center">Send a Message</h3>
+            <h3 className="text-2xl font-semibold mb-6 text-center" style={{ color: 'var(--gh-link)' }}>Send a Message</h3>
             <form onSubmit={handleSubmit} className="space-y-5">
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
@@ -103,7 +106,8 @@ export const Contact = () => {
                   onChange={handleChange}
                   placeholder="Your Name"
                   required
-                  className="w-full px-4 py-2 border border-blue-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400"
+                  className="w-full px-4 py-2 rounded-lg focus:outline-none"
+                  style={{ border: '1px solid var(--gh-border)', background: 'var(--gh-card)', color: 'var(--gh-text)' }}
                 />
               </motion.div>
               <motion.div
@@ -118,7 +122,8 @@ export const Contact = () => {
                   onChange={handleChange}
                   placeholder="Your Email"
                   required
-                  className="w-full px-4 py-2 border border-blue-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400"
+                  className="w-full px-4 py-2 rounded-lg focus:outline-none"
+                  style={{ border: '1px solid var(--gh-border)', background: 'var(--gh-card)', color: 'var(--gh-text)' }}
                 />
               </motion.div>
               <motion.div
@@ -133,12 +138,14 @@ export const Contact = () => {
                   placeholder="Your Message"
                   required
                   rows={4}
-                  className="w-full px-4 py-2 border border-blue-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400"
+                  className="w-full px-4 py-2 rounded-lg focus:outline-none"
+                  style={{ border: '1px solid var(--gh-border)', background: 'var(--gh-card)', color: 'var(--gh-text)' }}
                 />
               </motion.div>
               <motion.button
                 type="submit"
-                className="w-full bg-blue-700 text-white font-medium py-2 rounded-lg hover:bg-blue-800 transition shadow-lg hover:scale-105 active:scale-95 duration-200"
+                className="w-full font-medium py-2 rounded-lg transition shadow-lg hover:scale-105 active:scale-95 duration-200"
+                style={{ background: 'var(--gh-link)', color: '#fff' }}
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.97 }}
               >
